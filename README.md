@@ -21,6 +21,6 @@ GENIE_GXG:
 -k: number of random vector
 -jn: number of jackknife blocks
 -o: output file
---annot: annotation file
+-annot: annotation file
 ```
 
