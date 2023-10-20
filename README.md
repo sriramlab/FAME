@@ -1,6 +1,16 @@
 # FAME
-This is the software for FAst Marginal Epistasis test (FAME) link: [https://www.biorxiv.org/content/10.1101/2023.09.10.557084v1.abstract]
+This is the software for FAst Marginal Epistasis test (FAME) 
+link: [https://www.biorxiv.org/content/10.1101/2023.09.10.557084v1.abstract]
 
+## Prerequisites
+The following packages are required on a Linux machine to compile and use the software package.
+```
+g++
+cmakes
+make
+```
+
+## General description
 Given a genotype matrix (NxM) encoded as plink format (bim, fam, bed), the target trait in the same format, and an annotation file (MxK) with K bins across the M features, FAME jointly estimates the marginal effect across all the SNPs and the ME effect of the target SNP at k-th bin. 
 
 To run the code, please delete the existing build (if any) and then use the following commands to compile the executable code.
@@ -11,7 +21,9 @@ cmake ..
 make
 ```
 
-Commands
+
+
+## Parameters
 ```
 GENIE_GXG:
 -g: path to genotype
@@ -34,3 +46,6 @@ sh test.sh
 cd example/multi-bin
 sh test.sh
 ```
+
+## Output:
+K+2 estimated variance components will be reported. The first K components correspond to the additive component at each bin; the K+1 th component corresponds to the ME effect of the target bin; and the K+2 th component corresponds to the i.i.d. noise component.
