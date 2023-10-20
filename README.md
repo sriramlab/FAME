@@ -49,4 +49,4 @@ sh test.sh
 ```
 
 ## Output:
-K+2 estimated variance components will be reported. The first K components correspond to the additive component at each bin; the K+1 th component corresponds to the ME effect of the target bin; and the K+2 th component corresponds to the i.i.d. noise component.
+K+2 estimated variance components will be reported. The first K components correspond to the additive component at each bin; the K+1 th component corresponds to the ME effect of the target bin; and the K+2 th component corresponds to the i.i.d. noise component. 
