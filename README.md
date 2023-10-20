@@ -23,4 +23,14 @@ GENIE_GXG:
 -o: output file
 -annot: annotation file
 ```
-
+Two examples have been provided in the path `example`. 
+* To test FAME with single bin:
+```
+cd example/single-bin
+sh test.sh
+```
+* To test FAME with multiple bins:
+```
+cd example/multi-bin
+sh test.sh
+```
