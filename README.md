@@ -14,7 +14,7 @@ make
 ## General description
 Given a genotype matrix (NxM) encoded as plink format (bim, fam, bed), the target trait in the same format, and an annotation file (MxK) with K bins across the M features, FAME jointly estimates the marginal effect across all the SNPs and the ME effect of the target SNP at k-th bin. 
 
-To run the code, please delete the existing build (if any) and then use the following commands to compile the executable code.
+To run the code, please delete the existing `build` folder (if any) and then use the following commands to compile the executable code.
 ```
 mkdir build
 cd build
