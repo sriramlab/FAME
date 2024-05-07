@@ -1,5 +1,5 @@
 FILE(REMOVE_RECURSE
-  "CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o"
+  "CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o"
   "CMakeFiles/GENIE_GxG.dir/src/genotype.cpp.o"
   "CMakeFiles/GENIE_GxG.dir/src/storage.cpp.o"
   "GENIE_GxG.pdb"

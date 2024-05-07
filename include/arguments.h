@@ -19,8 +19,8 @@ struct options{
 	std::string COVARIATE_NAME; 
 	std::string ENV_FILE_PATH;
 	std::string OUTPUT_PATH;
-	 std::string Annot_PATH;
-	
+	std::string Annot_PATH;
+	std::string Target_Path;
 
 	std::string simul_par_PATH;
 	  std::string maf_ld_PATH;
@@ -219,6 +219,7 @@ void parse_args(int argc, char const *argv[]){
 	 command_line_opts.fixed_eff=false;
 	command_line_opts.text_version = false;
 	command_line_opts.nongenbin=0; // Boyang added
+	command_line_opts.Target_Path="";
 	
 
 	if(argc<3){
@@ -242,15 +243,18 @@ void parse_args(int argc, char const *argv[]){
 		command_line_opts.PHENOTYPE_FILE_PATH= cfg.getValueOfKey<string>("phenotype", string("")); 
 		command_line_opts.COVARIATE_FILE_PATH= cfg.getValueOfKey<string>("covariate", string(""));
 		command_line_opts.COVARIATE_NAME=cfg.getValueOfKey<string>("covariateName", string(""));  
+		command_line_opts.Target_Path= cfg.getValueOfKey<string>("target_path",string(""));	// Boyang added
 		command_line_opts.accelerated_em = cfg.getValueOfKey<int>("accelerated_em",0);
 		command_line_opts.memory_efficient = cfg.getValueOfKey<bool>("memory_efficient",false);	
 		command_line_opts.fixed_eff = cfg.getValueOfKey<bool>("fixed_eff",false);
 		command_line_opts.fast_mode = cfg.getValueOfKey<bool>("fast_mode",true);
 		command_line_opts.missing = cfg.getValueOfKey<bool>("missing",false);	
-		command_line_opts.text_version = cfg.getValueOfKey<bool>("text_version",false);							
+		command_line_opts.text_version = cfg.getValueOfKey<bool>("text_version",false);	
+						
 	}
 	else{
 		for (int i = 1; i < argc; i++) { 
+			cout<<argv[i]<<endl;
 		if (i + 1 != argc){
 			if(strcmp(argv[i],"-g")==0){
 				command_line_opts.GENOTYPE_FILE_PATH = string(argv[i+1]);
@@ -348,6 +352,11 @@ void parse_args(int argc, char const *argv[]){
 			
 			else if(strcmp(argv[i],"-gxgbin")==0){ // Boyang added
 				command_line_opts.nongenbin= atoi(argv[i+1]);
+				i++;
+            }
+
+			else if(strcmp(argv[i],"-tp")==0){ // Boyang added
+				command_line_opts.Target_Path= string(argv[i+1]);
 				i++;
             }
 			

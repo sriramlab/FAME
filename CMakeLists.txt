@@ -19,4 +19,4 @@ ADD_DEFINITIONS(-DDEBUG=${DEBUG})
 
 
 
-add_executable(GENIE_GxG src/FAME.cpp src/genotype.cpp src/storage.cpp)
+add_executable(GENIE_GxG src/FAME_dev.cpp src/genotype.cpp src/storage.cpp)

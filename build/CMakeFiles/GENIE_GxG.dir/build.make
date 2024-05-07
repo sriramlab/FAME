@@ -52,28 +52,28 @@ include CMakeFiles/GENIE_GxG.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/GENIE_GxG.dir/flags.make
 
-CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o: CMakeFiles/GENIE_GxG.dir/flags.make
-CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o: ../src/FAME.cpp
+CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o: CMakeFiles/GENIE_GxG.dir/flags.make
+CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o: ../src/FAME_dev.cpp
 	$(CMAKE_COMMAND) -E cmake_progress_report /u/scratch/b/boyang19/tmp/u/flashscratch/b/boyang19/FAME/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o"
-	/u/local/compilers/gcc/7.5.0/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o -c /u/scratch/b/boyang19/tmp/u/flashscratch/b/boyang19/FAME/src/FAME.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o"
+	/u/local/compilers/gcc/7.5.0/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o -c /u/scratch/b/boyang19/tmp/u/flashscratch/b/boyang19/FAME/src/FAME_dev.cpp
 
-CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.i"
-	/u/local/compilers/gcc/7.5.0/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /u/scratch/b/boyang19/tmp/u/flashscratch/b/boyang19/FAME/src/FAME.cpp > CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.i
+CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.i"
+	/u/local/compilers/gcc/7.5.0/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /u/scratch/b/boyang19/tmp/u/flashscratch/b/boyang19/FAME/src/FAME_dev.cpp > CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.i
 
-CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.s"
-	/u/local/compilers/gcc/7.5.0/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /u/scratch/b/boyang19/tmp/u/flashscratch/b/boyang19/FAME/src/FAME.cpp -o CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.s
+CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.s"
+	/u/local/compilers/gcc/7.5.0/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /u/scratch/b/boyang19/tmp/u/flashscratch/b/boyang19/FAME/src/FAME_dev.cpp -o CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.s
 
-CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o.requires:
-.PHONY : CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o.requires
+CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o.requires:
+.PHONY : CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o.requires
 
-CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o.provides: CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o.requires
-	$(MAKE) -f CMakeFiles/GENIE_GxG.dir/build.make CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o.provides.build
-.PHONY : CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o.provides
+CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o.provides: CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o.requires
+	$(MAKE) -f CMakeFiles/GENIE_GxG.dir/build.make CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o.provides.build
+.PHONY : CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o.provides
 
-CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o.provides.build: CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o
+CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o.provides.build: CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o
 
 CMakeFiles/GENIE_GxG.dir/src/genotype.cpp.o: CMakeFiles/GENIE_GxG.dir/flags.make
 CMakeFiles/GENIE_GxG.dir/src/genotype.cpp.o: ../src/genotype.cpp
@@ -123,14 +123,14 @@ CMakeFiles/GENIE_GxG.dir/src/storage.cpp.o.provides.build: CMakeFiles/GENIE_GxG.
 
 # Object files for target GENIE_GxG
 GENIE_GxG_OBJECTS = \
-"CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o" \
+"CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o" \
 "CMakeFiles/GENIE_GxG.dir/src/genotype.cpp.o" \
 "CMakeFiles/GENIE_GxG.dir/src/storage.cpp.o"
 
 # External object files for target GENIE_GxG
 GENIE_GxG_EXTERNAL_OBJECTS =
 
-GENIE_GxG: CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o
+GENIE_GxG: CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o
 GENIE_GxG: CMakeFiles/GENIE_GxG.dir/src/genotype.cpp.o
 GENIE_GxG: CMakeFiles/GENIE_GxG.dir/src/storage.cpp.o
 GENIE_GxG: CMakeFiles/GENIE_GxG.dir/build.make
@@ -142,7 +142,7 @@ GENIE_GxG: CMakeFiles/GENIE_GxG.dir/link.txt
 CMakeFiles/GENIE_GxG.dir/build: GENIE_GxG
 .PHONY : CMakeFiles/GENIE_GxG.dir/build
 
-CMakeFiles/GENIE_GxG.dir/requires: CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o.requires
+CMakeFiles/GENIE_GxG.dir/requires: CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o.requires
 CMakeFiles/GENIE_GxG.dir/requires: CMakeFiles/GENIE_GxG.dir/src/genotype.cpp.o.requires
 CMakeFiles/GENIE_GxG.dir/requires: CMakeFiles/GENIE_GxG.dir/src/storage.cpp.o.requires
 .PHONY : CMakeFiles/GENIE_GxG.dir/requires

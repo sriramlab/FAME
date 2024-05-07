@@ -114,29 +114,29 @@ GENIE_GxG/fast:
 	$(MAKE) -f CMakeFiles/GENIE_GxG.dir/build.make CMakeFiles/GENIE_GxG.dir/build
 .PHONY : GENIE_GxG/fast
 
-src/FAME.o: src/FAME.cpp.o
-.PHONY : src/FAME.o
+src/FAME_dev.o: src/FAME_dev.cpp.o
+.PHONY : src/FAME_dev.o
 
 # target to build an object file
-src/FAME.cpp.o:
-	$(MAKE) -f CMakeFiles/GENIE_GxG.dir/build.make CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o
-.PHONY : src/FAME.cpp.o
+src/FAME_dev.cpp.o:
+	$(MAKE) -f CMakeFiles/GENIE_GxG.dir/build.make CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o
+.PHONY : src/FAME_dev.cpp.o
 
-src/FAME.i: src/FAME.cpp.i
-.PHONY : src/FAME.i
+src/FAME_dev.i: src/FAME_dev.cpp.i
+.PHONY : src/FAME_dev.i
 
 # target to preprocess a source file
-src/FAME.cpp.i:
-	$(MAKE) -f CMakeFiles/GENIE_GxG.dir/build.make CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.i
-.PHONY : src/FAME.cpp.i
+src/FAME_dev.cpp.i:
+	$(MAKE) -f CMakeFiles/GENIE_GxG.dir/build.make CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.i
+.PHONY : src/FAME_dev.cpp.i
 
-src/FAME.s: src/FAME.cpp.s
-.PHONY : src/FAME.s
+src/FAME_dev.s: src/FAME_dev.cpp.s
+.PHONY : src/FAME_dev.s
 
 # target to generate assembly for a file
-src/FAME.cpp.s:
-	$(MAKE) -f CMakeFiles/GENIE_GxG.dir/build.make CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.s
-.PHONY : src/FAME.cpp.s
+src/FAME_dev.cpp.s:
+	$(MAKE) -f CMakeFiles/GENIE_GxG.dir/build.make CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.s
+.PHONY : src/FAME_dev.cpp.s
 
 src/genotype.o: src/genotype.cpp.o
 .PHONY : src/genotype.o
@@ -195,9 +195,9 @@ help:
 	@echo "... GENIE_GxG"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... src/FAME.o"
-	@echo "... src/FAME.i"
-	@echo "... src/FAME.s"
+	@echo "... src/FAME_dev.o"
+	@echo "... src/FAME_dev.i"
+	@echo "... src/FAME_dev.s"
 	@echo "... src/genotype.o"
 	@echo "... src/genotype.i"
 	@echo "... src/genotype.s"

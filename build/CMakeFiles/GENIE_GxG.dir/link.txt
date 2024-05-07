@@ -1,1 +1,1 @@
-/u/local/compilers/gcc/7.5.0/bin/g++   -std=c++0x -O3 -lrt -lpthread  -O2 -g -DNDEBUG    CMakeFiles/GENIE_GxG.dir/src/FAME.cpp.o CMakeFiles/GENIE_GxG.dir/src/genotype.cpp.o CMakeFiles/GENIE_GxG.dir/src/storage.cpp.o  -o GENIE_GxG -rdynamic 
+/u/local/compilers/gcc/7.5.0/bin/g++   -std=c++0x -O3 -lrt -lpthread  -O2 -g -DNDEBUG    CMakeFiles/GENIE_GxG.dir/src/FAME_dev.cpp.o CMakeFiles/GENIE_GxG.dir/src/genotype.cpp.o CMakeFiles/GENIE_GxG.dir/src/storage.cpp.o  -o GENIE_GxG -rdynamic 
