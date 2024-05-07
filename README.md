@@ -15,7 +15,7 @@ make
 Given a genotype matrix (NxM) encoded as plink format (bim, fam, bed), the target trait in the same format, and an annotation file (MxK) with K bins across the M features, FAME jointly estimates the marginal effect across all the SNPs and the ME effect of the target SNP at k-th bin. 
 
 #### Note: 
-Intuitively, an *annotation file* guides the software on how to partition the genotype matrix by features. The column number of the annotation file determines the number of partitions made to the feature space. One basic rule of creating the annotation file: each row should contain one and only one "1", and all the rest columns of the same row should be 0s.
+Intuitively, an **annotation file** guides the software on how to partition the genotype matrix by features. The column number of the annotation file determines the number of partitions made to the feature space. One basic rule of creating the annotation file: each row should contain one and only one "1", and all the rest columns of the same row should be 0s.
 
 To run the code, please delete the existing `build` folder (if any) and then use the following commands to compile the executable code.
 ```
