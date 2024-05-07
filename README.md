@@ -1,5 +1,5 @@
-# FAME
-This is the software for FAst Marginal Epistasis test (FAME) 
+# FAME -- external target
+This is the software extension for FAst Marginal Epistasis test (FAME) 
 
 link: [https://www.biorxiv.org/content/10.1101/2023.09.10.557084v1.abstract]
 
@@ -30,9 +30,10 @@ GENIE_GXG:
 -g: path to genotype
 -p: path to phenotype
 -gxgbin: the bin index to compute the ME effect (0-based)
--snp: the target SNP index (1-based)
--k: number of random vector
--jn: number of jackknife blocks
+-snp: the target SNP index (1-based). If the target feature is provided outside of the genotype file, then put -1 and specify the target feature.
+-tp: the external target feature to understand the ME effect. It should be a single column file, with N rows corresponding to each individual
+-k: number of random vectors (100 is suggested)
+-jn: number of jackknife blocks (100 is suggested)
 -o: output file
 -annot: annotation file
 ```
