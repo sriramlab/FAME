@@ -223,7 +223,6 @@ int read_target(int Nind, std::string filename){
                 j++;
         }
         return 0; // success
-
 }
 
 
