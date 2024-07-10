@@ -217,7 +217,7 @@ int read_target(int Nind, std::string filename){
                 Enviro(j,0)=cur;
                 j++;
         }
-
+        return 0; // success
 }
 
 int read_cov(bool std,int Nind, std::string filename, std::string covname){
