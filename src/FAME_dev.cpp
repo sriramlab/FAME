@@ -198,27 +198,33 @@ std::istream& newline(std::istream& in)
     return in.ignore();
 }
 
+
 int read_target(int Nind, std::string filename){
         ifstream ifs(filename.c_str());
+        if (!ifs.is_open()) {
+                cerr << "Error opening file: " << filename << endl;
+                return -1; // error: file doesn't open
+        }
         std::string line;
         cout << Nindv << endl;
         Enviro.resize(Nind,1);
-        std::istringstream in; 
-        vector<vector<int> > missing; 
+        std::istringstream in;
+        vector<vector<int> > missing;
 
         int j = 0;
         while(std::getline(ifs, line)){
-                in.clear(); 
+                in.clear();
                 in.str(line);
                 string temp;
-                in>>temp; in>>temp; //FID IID 
+                in>>temp; in>>temp; //FID IID
                 in>>temp;
-                double cur = atof(temp.c_str()); 
+                double cur = atof(temp.c_str());
                 Enviro(j,0)=cur;
                 j++;
         }
         return 0; // success
 }
+
 
 int read_cov(bool std,int Nind, std::string filename, std::string covname){
 	ifstream ifs(filename.c_str(), ios::in); 
