@@ -52,5 +52,7 @@ cd example/multi-bin
 sh test.sh
 ```
 
+Compared to the default FAME version, the external target feature, whose marginal epistasis effect is of interest, needs to be provided in the standardized form (see `example/target.txt`) 
+
 ## Output:
 K+2 estimated variance components will be reported. The first K components correspond to the additive component at each bin; the K+1 th component corresponds to the ME effect of the target bin; and the K+2 th component corresponds to the i.i.d. noise component. 
