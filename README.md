@@ -24,7 +24,7 @@ cd build
 cmake ..
 make
 ```
-
+The compiling time should be less than 1 minute. 
 
 
 ## Parameters
