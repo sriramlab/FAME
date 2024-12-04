@@ -6,9 +6,9 @@ link: [https://www.biorxiv.org/content/10.1101/2023.09.10.557084v1.abstract]
 ## Prerequisites
 The following packages are required on a Linux machine to compile and use the software package.
 ```
-g++
-cmakes
-make
+g++ (>=4.5)
+cmake (>=2.8.12)
+make (>=3.81)
 ```
 
 ## General description
