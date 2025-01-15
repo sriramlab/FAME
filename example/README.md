@@ -1,9 +1,11 @@
-An input example is provided as plink file format with a prefix `small.` 
+### Input Example
+An example input is provided in PLINK file format with the prefix `small`.
 
-An output example is provided as `h2_0.5.pheno`. 
+### Output Example
+An example output is available as `h2_0.5.pheno`.
 
-Example FAME pipeline is provided in the following folder:
+### Example FAME Pipeline
+The following folders contain example FAME pipelines:
 
-Without genotype partitioning: `single-bin`
-
-With genotype partitioning: `multi-bin`
+- Without Genotype Partitioning: single-bin
+- With Genotype Partitioning: multi-bin
