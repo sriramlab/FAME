@@ -7,5 +7,5 @@ An example output is available as `h2_0.5.pheno`.
 ### Example FAME Pipeline
 The following folders contain example FAME pipelines:
 
-- Without Genotype Partitioning: single-bin
-- With Genotype Partitioning: multi-bin
+- Without Genotype Partitioning: `/single-bin`
+- With Genotype Partitioning: `/multi-bin`
