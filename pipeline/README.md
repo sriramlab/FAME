@@ -10,7 +10,7 @@ The pipeline processes a list of significant SNPs defined in a summary file and 
 
 ---
 
-## 🧠 Pipeline Overview
+## Pipeline Overview
 
 For each SNP (`Index`) and associated phenotype (`pheno`), `estimation_res.sh` did the following:
 
