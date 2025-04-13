@@ -36,7 +36,7 @@ Given:
 - A PLINK `.bim` genotype file,
 - A significant hit index (i.e., a SNP relative index in the bim file),
 - A phenotype label,
-- An LD region definition file (fake LD info file provided, the original LD block info can be downloaded at (here)[https://bitbucket.org/nygcresearch/ldetect-data/src/master/]),
+- An LD region definition file (fake LD info file provided, the original LD block info can be downloaded [here](https://bitbucket.org/nygcresearch/ldetect-data/src/master/)),
 - An optional list of significant hits,
 
 The script produces:
