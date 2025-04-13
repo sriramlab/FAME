@@ -1,0 +1,61 @@
+# End-to-End GxG Annotation and Regression Pipeline
+
+This bash script orchestrates the **end-to-end pipeline** for:
+
+1. **Generating SNP-level LD annotations**
+2. **Residualizing phenotypes using local LD SNPs**
+3. **Running FAME GxG interaction analysis** using a compiled binary (`GENIE_GxG`)
+
+The pipeline processes a list of significant SNPs defined in a summary file and performs **per-SNP annotation, regression, and model evaluation**.
+
+---
+
+## 🧠 Pipeline Overview
+
+For each SNP (`Index`) and associated phenotype (`pheno`), `estimation_res.sh` did the following:
+
+1. **Generate annotation file** from LD structure:
+    - via `5.split_LD.py`
+2. **Residualize phenotype** by removing genetic variance from the LD block:
+    - via `5.5.reg_Lin.py`
+3. **Run GxG model** to evaluate interactions using the residual phenotype:
+    - via `GENIE_GxG` binary
+
+To run the pipeline, simply executing:
+```
+bash estimation_res.sh
+```
+
+
+# Generate annotation file
+`5.split.LD.py`
+This script generates SNP-level annotations based on local linkage disequilibrium (LD) structure.
+
+
+Given:
+- A PLINK `.bim` genotype file,
+- A significant hit index (i.e., a SNP index in the BIM file),
+- A phenotype label,
+- An LD region definition file (e.g., from LDetect),
+- An optional list of significant hits,
+
+The script produces:
+- A two-column `.annot` file containing (0-based):
+  - Column 1: LD region indicator (1 if SNP is in the same LD block as the hit)
+  - Column 2: Trans-chromosomal or non-LD local indicator (1 if SNP is on a different chromosome or outside the local LD block)
+
+
+# Residualize phenotype
+`5.5.reg_Lin.py`
+This script processes genotype, phenotype, and annotation data to **residualize phenotype values** by removing the genetic component explained by SNPs in an LD block. It then fits a univariate linear regression at a **target SNP** to estimate its association with the residualized phenotype.
+
+Given:
+- A **PLINK genotype** file (`.bed`, `.bim`),
+- An **annotation file** marking LD regions and a target SNP,
+- A **phenotype file** (PLINK-style format),
+
+The script:
+1. Reads SNPs in an LD region defined by the annotation file.
+2. Removes the genetic signal of those SNPs from the phenotype using linear regression.
+3. Fits a linear model for the target SNP to predict the residual phenotype.
+4. Outputs the updated residualized phenotype in PLINK format.
