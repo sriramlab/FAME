@@ -1,6 +1,6 @@
-# End-to-End GxG Annotation and Regression Pipeline
+# FAME Main Pipeline
 
-This bash script orchestrates the **end-to-end pipeline** for:
+This bash script is a demo **end-to-end pipeline** for:
 
 1. **Generating SNP-level LD annotations**
 2. **Residualizing phenotypes using local LD SNPs**
