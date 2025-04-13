@@ -33,7 +33,7 @@ results/xxx.pheno.res.out.full.txt ## Full results
 ```
 The example output is
 ```
-sigma^2_0: -0.0281539 se: 0.0036717 ## var_g of LD block -- can be safely discard
+sigma^2_0: -0.0281539 se: 0.0036717 ## var_g of LD block -- can be safely discarded
 sigma^2_1: 0.454532 se: 0.133152 ## var_g of non-LD block
 sigma^2_2: -0.0066988 se: 0.0526437 ## var_gxg of non-LD block
 sigma^2_3: 0.526866 se: 0.0945873 ## var_e
