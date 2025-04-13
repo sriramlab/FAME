@@ -34,9 +34,9 @@ This script generates SNP-level annotations based on local linkage disequilibriu
 
 Given:
 - A PLINK `.bim` genotype file,
-- A significant hit index (i.e., a SNP index in the BIM file),
+- A significant hit index (i.e., a SNP relative index in the bim file),
 - A phenotype label,
-- An LD region definition file (e.g., from LDetect),
+- An LD region definition file (fake LD info file provided, the original LD block info can be downloaded at (here)[https://bitbucket.org/nygcresearch/ldetect-data/src/master/]),
 - An optional list of significant hits,
 
 The script produces:
@@ -57,5 +57,4 @@ Given:
 The script:
 1. Reads SNPs in an LD region defined by the annotation file.
 2. Removes the genetic signal of those SNPs from the phenotype using linear regression.
-3. Fits a linear model for the target SNP to predict the residual phenotype.
 4. Outputs the updated residualized phenotype in PLINK format.
