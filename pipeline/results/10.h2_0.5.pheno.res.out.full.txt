@@ -1,0 +1,567 @@
+#SNP in bim file 100
+11 SNPs in 0-th bin
+ Number of selected SNPs w.r.t  annot file : 11
+89 SNPs in 1-th bin
+ Number of selected SNPs w.r.t  annot file : 89
+Number of SNPs per block : 1
+Number of Indvs :200
+selected snp index: 11
+mean selected snp1.33
+sd seletected snp0.667495
+selected snp is in 10 jackknife block
+selected snp is 1 th snp of block
+No Covariate File Specified
+../example/small.bed
+reading genotype matrix :
+reading 0 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 1 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 2 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 3 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 4 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 1
+bin_index: 1num_snps: 0
+reading 5 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 1
+bin_index: 1num_snps: 0
+reading 6 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 1
+bin_index: 1num_snps: 0
+reading 7 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 1
+bin_index: 1num_snps: 0
+reading 8 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 1
+bin_index: 1num_snps: 0
+reading 9 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 1
+bin_index: 1num_snps: 0
+reading 10 block
+In read_bed2: about to read: 1number of snps
+################
+current global_snp_index is: 10
+pointer_bins  is 0size is: 0
+Adjust bin_index is: 0
+Adjusted local index of target SNP: 0
+bin_index: 0num_snps: 1
+bin_index: 1num_snps: 0
+reading 11 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 1
+bin_index: 1num_snps: 0
+reading 12 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 1
+bin_index: 1num_snps: 0
+reading 13 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 1
+bin_index: 1num_snps: 0
+reading 14 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 1
+bin_index: 1num_snps: 0
+reading 15 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 16 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 17 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 18 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 19 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 20 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 21 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 22 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 23 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 24 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 25 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 26 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 27 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 28 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 29 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 30 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 31 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 32 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 33 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 34 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 35 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 36 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 37 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 38 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 39 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 40 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 41 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 42 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 43 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 44 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 45 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 46 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 47 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 48 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 49 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 50 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 51 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 52 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 53 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 54 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 55 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 56 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 57 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 58 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 59 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 60 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 61 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 62 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 63 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 64 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 65 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 66 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 67 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 68 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 69 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 70 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 71 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 72 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 73 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 74 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 75 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 76 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 77 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 78 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 79 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 80 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 81 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 82 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 83 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 84 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 85 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 86 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 87 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 88 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 89 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 90 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 91 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 92 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 93 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 94 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 95 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 96 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 97 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 98 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+reading 99 block
+In read_bed2: about to read: 1number of snps
+bin_index: 0num_snps: 0
+bin_index: 1num_snps: 1
+ Reading and computing  of all blocks are finished
+bin 0 length: 11
+bin 0 7.08723e-11
+bin 1 length: 89
+bin 1 360.332
+bin 2 length: 89
+bin 2 183.979
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+In read_bed2: about to read: 1number of snps
+size of the bins :
+bin 0 : 11
+bin 1 : 89
+bin 2 : 89
+Xl3795.23 200.542 200.061     200
+200.542 633.366 201.154     200
+200.061 201.154 932.185 198.765
+    200     200 198.765     200
+Yl7.08723e-11
+    360.332
+    183.979
+    178.392
+sigms
+-0.0496851
+  0.419849
+0.00782805
+  0.514015
+herit
+-0.0557004
+  0.470679
+0.00877577
+  0.423755
+d : 244.421
+-4.95083e-10  0.000235958  0.000103969  5.89989e-05
+ 0.000235958      5661.67      1828.58      1459.15
+ 0.000103969      1828.58      1939.33      559.104
+ 5.89989e-05      1459.15      559.104      488.842
+ 3.80266e-05 -0.000625588 -2.67945e-05 -6.75127e-05
+-0.000625588    0.0172021  0.000890334  -0.00626811
+-2.67945e-05  0.000890334   0.00242294  -0.00280796
+-6.75127e-05  -0.00626811  -0.00280796     0.010375
+se
+0.00616657
+0.131157
+0.0492234
+0.101858
+sigma^2_0: -0.0496851 se: 0.00616657
+sigma^2_1: 0.419849 se: 0.131157
+sigma^2_2: 0.00782805 se: 0.0492234
+sigma^2_3: 0.514015 se: 0.101858
