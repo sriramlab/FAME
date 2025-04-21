@@ -1,6 +1,6 @@
-# End-to-End GxG Annotation and Regression Pipeline
+# FAME Main Pipeline
 
-This bash script orchestrates the **end-to-end pipeline** for:
+This bash script is a demo **end-to-end pipeline** for:
 
 1. **Generating SNP-level LD annotations**
 2. **Residualizing phenotypes using local LD SNPs**
@@ -36,6 +36,19 @@ To run the pipeline, simply executing:
 bash estimation_res.sh
 ```
 
+Results will be generated at
+```
+results/xxx.pheno.res.out.txt ## core results
+results/xxx.pheno.res.out.full.txt ## Full results
+```
+The example output is
+```
+sigma^2_0: -0.0281539 se: 0.0036717 ## var_g of LD block -- can be safely discarded
+sigma^2_1: 0.454532 se: 0.133152 ## var_g of non-LD block
+sigma^2_2: -0.0066988 se: 0.0526437 ## var_gxg of non-LD block
+sigma^2_3: 0.526866 se: 0.0945873 ## var_e
+
+```
 
 # Generate annotation file
 `5.split.LD.py`
@@ -44,15 +57,15 @@ This script generates SNP-level annotations based on local linkage disequilibriu
 
 Given:
 - A PLINK `.bim` genotype file,
-- A significant hit index (i.e., a SNP index in the BIM file),
+- A significant hit index (i.e., a SNP relative index in the bim file),
 - A phenotype label,
-- An LD region definition file (e.g., from LDetect),
+- An LD region definition file (fake LD info file provided, the original LD block info can be downloaded [here](https://bitbucket.org/nygcresearch/ldetect-data/src/master/)),
 - An optional list of significant hits,
 
 The script produces:
 - A two-column `.annot` file containing (0-based):
   - Column 1: LD region indicator (1 if SNP is in the same LD block as the hit)
-  - Column 2: Trans-chromosomal or non-LD local indicator (1 if SNP is on a different chromosome or outside the local LD block)
+  - Column 2: Non-LD region where LD will be computed upon (1 if SNP is on a different chromosome or outside the local LD block)
 
 
 # Residualize phenotype
@@ -67,5 +80,4 @@ Given:
 The script:
 1. Reads SNPs in an LD region defined by the annotation file.
 2. Removes the genetic signal of those SNPs from the phenotype using linear regression.
-3. Fits a linear model for the target SNP to predict the residual phenotype.
 4. Outputs the updated residualized phenotype in PLINK format.
