@@ -15,11 +15,21 @@ The pipeline processes a list of significant SNPs defined in a summary file and 
 For each SNP (`Index`) and associated phenotype (`pheno`), `estimation_res.sh` did the following:
 
 1. **Generate annotation file** from LD structure:
-    - via `5.split_LD.py`
+    - via `generate_ld_annotations.py`
 2. **Residualize phenotype** by removing genetic variance from the LD block:
-    - via `5.5.reg_Lin.py`
+    - via `linear_regression_annotation.py`
 3. **Run GxG model** to evaluate interactions using the residual phenotype:
-    - via `GENIE_GxG` binary
+    - via `FAME/build/GENIE_GxG` binary
+
+Inputs
+```
+code=../build/GENIE_GxG ## Path to binary executable code
+gen=../example/small ## path to plink genotype file (prefix)
+sumfile=sig.index.summary.txt ## space seperated summary stats file containing phenotype name - SNP index pairs
+pheRoot=../example/ ## Path to input phenotype files 
+# Note:
+# Phenotype values are expected to be properly normalized (e.g., via inverse-rank normal transformation, IVRT) before running the pipeline.
+```
 
 To run the pipeline, simply executing:
 ```
