@@ -51,7 +51,7 @@ sigma^2_3: 0.526866 se: 0.0945873 ## var_e
 ```
 
 # Generate annotation file
-`5.split.LD.py`
+`generate_ld_annotations.py`
 This script generates SNP-level annotations based on local linkage disequilibrium (LD) structure.
 
 
@@ -69,7 +69,7 @@ The script produces:
 
 
 # Residualize phenotype
-`5.5.reg_Lin.py`
+`linear_regression_annotation.py`
 This script processes genotype, phenotype, and annotation data to **residualize phenotype values** by removing the genetic component explained by SNPs in an LD block. It then fits a univariate linear regression at a **target SNP** to estimate its association with the residualized phenotype.
 
 Given:
