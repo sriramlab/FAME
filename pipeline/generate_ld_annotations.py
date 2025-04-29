@@ -75,8 +75,8 @@ def main():
     
 
     # Load BIM data again (alternative column names)
-    df = pd.read_csv(bim_filepath, header=None, delimiter='\t')
-    df.columns = ['chr', 'ID', 'unknown', 'loci', 'Ma', 'Mi']
+    # df = pd.read_csv(bim_filepath, header=None, delimiter='\t')
+    # df.columns = ['chr', 'ID', 'unknown', 'loci', 'Ma', 'Mi']
 
     block = 100  # Block size (currently unused)
 
@@ -88,38 +88,49 @@ def main():
     inforow = bimfile.iloc[rIndex]
     CHR = inforow['chr']
     snpindex = inforow['pos']
+    print(f'snpindx: {snpindex}, CHR: {CHR}')
 
     # Load LD region file for corresponding chromosome
     
     LD_pd = pd.read_csv(LD_filename, delim_whitespace=True)
 
+    assert snpindex <= LD_pd.stop.max(), \
+        f"Error: SNP index {snpindex} exceeds max stop index {LD_pd.stop.max()} in LD file."
+    assert snpindex >= LD_pd.start.min(), \
+        f"Error: SNP index {snpindex} is less than min start index {LD_pd.start.min()} in LD file."
+    
     # Determine LD boundaries
     start_index = np.where(LD_pd.start <= snpindex)[0][-1]
     stop_index = np.where(LD_pd.stop >= snpindex)[0][0]
     start_pindex = LD_pd.start.iloc[start_index]
     stop_pindex = LD_pd.stop.iloc[stop_index]
+    
+    assert start_pindex <= snpindex <= stop_pindex, \
+        f"Error: SNP index {snpindex} not in range [{start_pindex}, {stop_pindex}]"
+    
 
     # Get locus and chromosome from df
-    loci = df.iloc[rIndex, 3]
-    Chr2 = df.iloc[rIndex, 0]
+    loci = bimfile.iloc[rIndex, 3]
+    Chr2 = bimfile.iloc[rIndex, 0]
+
 
     # Construct sub-annotations
     subannot_local = annot_local.copy()
-    subannot_local[df.chr == Chr2] = 1
-    subannot_local[(df.chr == Chr2) & (df.loci >= start_pindex) & (df.loci <= stop_pindex)] = 0
+    subannot_local[bimfile.chr == Chr2] = 1
+    subannot_local[(bimfile.chr == Chr2) & (bimfile.pos >= start_pindex) & (bimfile.pos <= stop_pindex)] = 0
 
     data.append([trait, rIndex, CHR, snpindex, start_pindex, stop_pindex])
 
     subannot_LD = annot_LD.copy()
-    subannot_LD[(df.chr == Chr2) & (df.loci >= start_pindex) & (df.loci <= stop_pindex)] = 1
+    subannot_LD[(bimfile.chr == Chr2) & (bimfile.pos >= start_pindex) & (bimfile.pos <= stop_pindex)] = 1
 
     subannot_dist = annot_dist.copy()
-    subannot_dist[df.chr != Chr2] = 1
+    subannot_dist[bimfile.chr != Chr2] = 1
 
     subannot_rmLD = subannot_local + subannot_dist
 
-    print(f'Index {rIndex}, local annotation ones: {np.sum(subannot_local)}; '
-          f'distance annotation ones: {np.sum(subannot_dist)}')
+    print(f'Index {rIndex}, LD annotation ones: {np.sum(subannot_LD)}; '
+          f'rmLD annotation ones: {np.sum(subannot_rmLD)}')
 
     # Combine into final annotation matrix
     subannot = np.concatenate((
