@@ -72,13 +72,6 @@ def main():
     data = []
 
     # Parse command-line arguments
-    
-
-    # Load BIM data again (alternative column names)
-    # df = pd.read_csv(bim_filepath, header=None, delimiter='\t')
-    # df.columns = ['chr', 'ID', 'unknown', 'loci', 'Ma', 'Mi']
-
-    block = 100  # Block size (currently unused)
 
     # Load candidate index summary (kept for completeness)
     cand_df = pd.read_csv(HitFile,
@@ -146,11 +139,6 @@ def main():
     # Save annotation and summary
     np.savetxt(f'{output_dir}/{trait}-{rIndex}.annot', subannot, fmt='%i')
 
-    # LDsummary = pd.DataFrame(
-    #     data=data,
-    #     columns=['trait', 'Index', 'Chr', 'Pindex', 'Start_index', 'Stop_index']
-    # )
-    # LDsummary.to_csv(f'{output_dir}/LDsummary.csv', index=False)
 
 
 if __name__ == "__main__":
