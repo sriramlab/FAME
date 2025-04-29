@@ -6,9 +6,9 @@ gen=${2:-../example/small}                 # Genotype PLINK prefix
 sumfile=${3:-"sig.index.summary.txt"}      # File with phenotype-index pairs
 pheRoot=${4:-../example/}                  # Root directory for phenotype files
 
+sig_row_count=$(wc -l < ${sumfile}) ## Number of rows in the summary file (phenotype-index pairs)
 
-
-for SGE_TASK_ID in $(seq 1 2); do
+for SGE_TASK_ID in $(seq 1 $sig_row_count); do
   
   echo "SGE_TASK_ID: $SGE_TASK_ID"
 
