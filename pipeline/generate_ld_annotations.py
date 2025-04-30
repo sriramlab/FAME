@@ -85,16 +85,18 @@ def main():
 
     # Load LD region file for corresponding chromosome
     
-    LD_pd = pd.read_csv(LD_filename, delim_whitespace=True)
-
-    assert snpindex <= LD_pd.stop.max(), \
+    LD_pd = pd.read_csv(LD_filename, delim_whitespace=True) ## chr, block_start, block_end
+    LD_pd['chr'] = LD_pd['chr'].astype(str)
+    
+    chr_mask = LD_pd['chr'] == str(CHR)
+    assert snpindex <= LD_pd.loc[chr_mask,'stop'].max(), \
         f"Error: SNP index {snpindex} exceeds max stop index {LD_pd.stop.max()} in LD file."
-    assert snpindex >= LD_pd.start.min(), \
+    assert snpindex >= LD_pd.loc[chr_mask,'start'].min(), \
         f"Error: SNP index {snpindex} is less than min start index {LD_pd.start.min()} in LD file."
     
     # Determine LD boundaries
-    start_index = np.where(LD_pd.start <= snpindex)[0][-1]
-    stop_index = np.where(LD_pd.stop >= snpindex)[0][0]
+    start_index = np.where((LD_pd.chr==str(CHR))&(LD_pd.start <= snpindex))[0][-1]
+    stop_index = np.where((LD_pd.chr==str(CHR))&(LD_pd.stop >= snpindex))[0][0]
     start_pindex = LD_pd.start.iloc[start_index]
     stop_pindex = LD_pd.stop.iloc[stop_index]
     
