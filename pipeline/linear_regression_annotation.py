@@ -31,11 +31,25 @@ def parse_args():
     )
     
     parser.add_argument(
-        '--phe_path',
+        '--pheno',
         type=str,
         default="../example/h2_0.5.pheno",
         help="Path to the ivrted phenotype file."
     )
+
+    parser.add_argument(
+        '--output',
+        type=str,
+        default="out.pheno",
+        help="Path to the residualized output phenotype file."
+    )
+
+    parser.add_argument(
+        '--debug',
+        action='store_true',
+        help="Print debugging output"
+    )
+
     return parser.parse_args()
     
 
@@ -45,7 +59,10 @@ def main():
     # Set variables based on command-line arguments.
     annot_path = args.annot
     bfile = args.bfile
-    base_phe_path = args.phe_path
+    base_phe_path = args.pheno
+    debug = args.debug
+    outfilename = args.output
+	
     # Load annotation data.
     annot = np.loadtxt(annot_path)
     
@@ -60,15 +77,20 @@ def main():
 
     # Load phenotype data.
     base_phe_df = pd.read_csv(base_phe_path, delimiter=' ')
-    print(base_phe_df.head())
+
+    if debug:
+        print(base_phe_df.head())
+
     base_phe = base_phe_df.pheno.values
 
     # Logging message.
-    print(f'######### In trait {trait_config} #########')
+    if debug:
+       print(f'######### In trait {trait_config} #########')
 
     # Identify indices where the annotation is equal to 1.
     ld_indices = np.where(annot[:, 0] == 1)[0]
-    print(f'LD_indices: {ld_indices}')
+    if debug:
+       print(f'LD indices: {ld_indices}')
     istart = ld_indices[0]
     iend = ld_indices[-1]
 
@@ -83,7 +105,8 @@ def main():
     # Determine target SNP index from the annotation file name.
     annot_filename = os.path.basename(annot_path)
     target_index = int(annot_filename.split('-')[-1].split('.')[0])
-    print(f'target index: {target_index}')
+    if debug:
+       print(f'target index: {target_index}')
 
     # Read and process the target SNP's genotype data.
     X_t = G.read(np.s_[:, target_index:(target_index + 1)])
@@ -101,12 +124,18 @@ def main():
     # Save the updated phenotype results.
     newPhe_res_df = base_phe_df.copy()
     newPhe_res_df['pheno'] = newPhe_res
-    output_dir = f'traits/{trait_config}_res'
-    if not os.path.isdir(output_dir):
-        os.makedirs(output_dir)
     newPhe_res_df.iloc[:, 0] = newPhe_res_df.iloc[:, 0].astype(int) ## FID
     newPhe_res_df.iloc[:, 1] = newPhe_res_df.iloc[:, 1].astype(int) ## IID
-    newPhe_res_df.to_csv(f'{output_dir}/{annot_filename}', sep=' ', index=None)
+
+
+    # The path for outfilename must exist. 
+    # Currently path is created in run_fame_pipeline.sh
+    newPhe_res_df.to_csv(f'{outfilename}', sep=' ', index=None)
+    print (f'Writing residualized phenotypes to {outfilename}')
+
+    if debug:
+       print(f'annot : {annot_filename}')
+       print(f'outfilename : {outfilename}')
 
 if __name__ == "__main__":
     main()
