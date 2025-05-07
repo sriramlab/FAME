@@ -11,41 +11,43 @@ def parse_args():
     """
     Parse command-line arguments.
 
-    --rIndex: Relative index for the BIM file.
-    --phe: Trait identifier.
+    --rIndex: Relative index of target SNP in the BIM file.
+    --output: Output file to save LD block annotations
     """
-    parser = argparse.ArgumentParser(description='Signal SNP annotation main script.')
+    parser = argparse.ArgumentParser(description='Target SNP annotation script.')
     parser.add_argument('--rIndex', 
                         type=int, 
                         required=True,
-                        help='Relative index in the BIM file to process.')
-    
-    parser.add_argument('--pheno', 
-                        type=str, 
-                        required=True,
-                        help='Trait identifier (phenotype).')
-    
+                        help='Relative index of the target SNP in the BIM file.')
+
     parser.add_argument(
         '--bfile',
         type=str,
         default="../example/small",
-        help="Path to the plink genotype file."
-    )
-    
-    parser.add_argument(
-        '--HitFile',
-        type=str,
-        default="sig.index.summary.txt",
-        help="Path storing the significant hits summary."
+        help="Path to the plink genotype files (only need the bim file)"
     )
     
     parser.add_argument(
         '--LDPath',
         type=str,
-        default="fake_ld.bed",
+        default="example_ld.bed",
         help="Path to LD information."
     )
-    
+
+    parser.add_argument(
+        '--output',
+        type=str,
+        default="out.annot",
+        help="Path to the output annotation file."
+    )
+
+    parser.add_argument(
+        '--debug',
+        action='store_true',
+        help="Print debugging output"
+    )
+
+
     return parser.parse_args()
 
 
@@ -53,11 +55,11 @@ def main():
     # File paths for input data
     args = parse_args()
     rIndex = args.rIndex
-    trait = args.pheno
     LDPath = args.LDPath
     plink_path = args.bfile
-    HitFile = args.HitFile
     LD_filename = args.LDPath
+    outfilename = args.output
+    debug = args.debug
     bim_filepath = f'{plink_path}.bim'
 
     # Load BIM file and assign column names
@@ -69,19 +71,14 @@ def main():
     annot_local = np.zeros(N)
     annot_dist = np.zeros(N)
     annot_LD = np.zeros(N)
-    data = []
 
     # Parse command-line arguments
-
-    # Load candidate index summary (kept for completeness)
-    cand_df = pd.read_csv(HitFile,
-                          header=None, delimiter=' ')
 
     # SNP information at the specified index
     inforow = bimfile.iloc[rIndex]
     CHR = inforow['chr']
     snpindex = inforow['pos']
-    print(f'snpindx: {snpindex}, CHR: {CHR}')
+    print(f'Target SNP index {rIndex} corresponds to {CHR}:{snpindex} in {bim_filepath}')
 
     # Load LD region file for corresponding chromosome
     
@@ -108,13 +105,10 @@ def main():
     loci = bimfile.iloc[rIndex, 3]
     Chr2 = bimfile.iloc[rIndex, 0]
 
-
     # Construct sub-annotations
     subannot_local = annot_local.copy()
     subannot_local[bimfile.chr == Chr2] = 1
     subannot_local[(bimfile.chr == Chr2) & (bimfile.pos >= start_pindex) & (bimfile.pos <= stop_pindex)] = 0
-
-    data.append([trait, rIndex, CHR, snpindex, start_pindex, stop_pindex])
 
     subannot_LD = annot_LD.copy()
     subannot_LD[(bimfile.chr == Chr2) & (bimfile.pos >= start_pindex) & (bimfile.pos <= stop_pindex)] = 1
@@ -124,8 +118,9 @@ def main():
 
     subannot_rmLD = subannot_local + subannot_dist
 
-    print(f'Index {rIndex}, LD annotation ones: {np.sum(subannot_LD)}; '
-          f'rmLD annotation ones: {np.sum(subannot_rmLD)}')
+    if debug:
+        print(f'Index {rIndex}, SNPs in LD block : {np.sum(subannot_LD)}; '
+          f'SNPs outside LD block: {np.sum(subannot_rmLD)}')
 
     # Combine into final annotation matrix
     subannot = np.concatenate((
@@ -133,14 +128,9 @@ def main():
         subannot_rmLD.reshape(-1, 1)
     ), axis=1)
 
-    # Ensure output directory exists
-    output_dir = 'annot'
-    if not os.path.isdir(output_dir):
-        os.makedirs(output_dir)
-
-    # Save annotation and summary
-    np.savetxt(f'{output_dir}/{trait}-{rIndex}.annot', subannot, fmt='%i')
-
+    # The path for outfilename must exist. 
+    # Currently path is created in run_fame_pipeline.sh
+    np.savetxt(f'{outfilename}', subannot, fmt='%i')
 
 
 if __name__ == "__main__":
