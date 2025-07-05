@@ -1,7 +1,9 @@
 # FAME
 This is the software for FAst Marginal Epistasis test (FAME) 
 
-link: [https://www.biorxiv.org/content/10.1101/2023.09.10.557084v1.abstract]
+[![DOI](https://zenodo.org/badge/687809262.svg)](https://doi.org/10.5281/zenodo.15814714)
+
+bioRxiv: [https://www.biorxiv.org/content/10.1101/2023.09.10.557084v1.abstract]
 
 ## Prerequisites
 The following packages are required on a Linux machine to compile and use the software package.
