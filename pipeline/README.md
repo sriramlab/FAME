@@ -25,8 +25,9 @@ Inputs
 ```
 genopath=../example/small    ##Path to PLINK genotype files (prefix)
 phenopath=../example/ ## Path to input phenotype files 
-phenosnpfile=pheno-snp-pairs.txt ## File containing pairs of phenotypes and SNP indices to be tested
+phenosnpfile=pheno-snp-pairs.txt ## File containing pairs of phenotypes and SNP ids to be tested
 code=../build/GENIE_GxG  ## Executable binary for FAME
+Files containing covariates are specified by .covar extension and should be in the same path and prefix as the phenotype file (for example, ../example/h2_0.5.covar when the phenotype is at ../example/h2_0.5.pheno). The includecovar flag needs to be set to true.
 # Note:
 # Phenotype values are expected to be properly normalized (e.g., via inverse-rank normal transformation, IVRT) before running the pipeline.
 # If the executable ../build/GENIE_GxG is run separately, the -snp argument expects a one-based index.
@@ -72,9 +73,10 @@ IMPORTANT: The index of the target SNP is 0-based.
 This script processes genotype, phenotype, and annotation data to **residualize phenotype values** by removing the genetic component explained by SNPs in the LD block corresponding to a target SNP. As a check, it then fits a univariate linear regression at the **target SNP** to estimate its association with the residualized phenotype (this step should produce a non-significant association).
 
 Given:
+- A target SNP (specified by an index in the bim file), 
 - A **PLINK genotype** file (`.bed`, `.bim`),
-- An **annotation file** marking the LD block containing the target SNP,
 - A **phenotype file** (PLINK-style format),
+- An **annotation file** marking the LD block containing the target SNP,
 
 The script:
 1. Reads SNPs in an LD region defined by the annotation file.

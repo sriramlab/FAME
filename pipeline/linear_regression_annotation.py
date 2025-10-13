@@ -22,13 +22,19 @@ def parse_args():
         help="Path to the annotation file containing SNP annotation data."
     )
     
-    
+    parser.add_argument(
+        '--rIndex', 
+        type=int, 
+        required=True,
+        help='Relative index of the target SNP in the BIM file.'
+    )
+
     parser.add_argument(
         '--bfile',
         type=str,
         default="../example/small",
         help="Path to the plink genotype file."
-    )
+   )
     
     parser.add_argument(
         '--pheno',
@@ -104,7 +110,8 @@ def main():
 
     # Determine target SNP index from the annotation file name.
     annot_filename = os.path.basename(annot_path)
-    target_index = int(annot_filename.split('-')[-1].split('.')[0])
+    # target_index = int(annot_filename.split('-')[-1].split('.')[0])
+    target_index = args.rIndex
     if debug:
        print(f'target index: {target_index}')
 
