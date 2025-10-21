@@ -70,7 +70,7 @@ IMPORTANT: The index of the target SNP is 0-based.
 
 # Residualize phenotype
 `linear_regression_annotation.py`
-This script processes genotype, phenotype, and annotation data to **residualize phenotype values** by removing the genetic component explained by SNPs in the LD block corresponding to a target SNP. As a check, it then fits a univariate linear regression at the **target SNP** to estimate its association with the residualized phenotype (this step should produce a non-significant association).
+This script processes genotype, phenotype, and annotation data to **residualize phenotype values** by removing the genetic component explained by SNPs in the LD block corresponding to a target SNP. As a check, it then fits a univariate linear regression at the **target SNP** to estimate its association with the residualized phenotype (this step should produce a non-significant association). The script accounts for missing values (recorded as NaN or -9) in the phenotype.
 
 Given:
 - A target SNP (specified by an index in the bim file), 
@@ -80,5 +80,7 @@ Given:
 
 The script:
 1. Reads SNPs in an LD region defined by the annotation file.
-2. Regresses out those SNPs from the phenotype using linear regression.
-3. Outputs the residualized phenotype in PLINK format (.pheno).
+2. Removes any genotypes/phenotypes with missing phenotype values.
+4. Regresses out those SNPs from the phenotype using linear regression.
+4. Adds back all previously removed values as -9 to the residualized phenotype.
+5. Outputs the residualized phenotype in PLINK format (.pheno).
