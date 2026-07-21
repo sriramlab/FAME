@@ -9,8 +9,30 @@ bioRxiv: [https://www.biorxiv.org/content/10.1101/2023.09.10.557084v1.abstract]
 The following packages are required on a Linux machine to compile and use the software package.
 ```
 g++ (>=4.5)
-cmake (>=2.8.12)
+cmake (>=3.5)
 make (>=3.81)
+Boost (>=1.50, headers only)
+```
+
+Boost is used only for its header-only random number generators, so no Boost libraries need to be linked. Install with:
+```
+# Debian/Ubuntu
+sudo apt-get install libboost-dev
+# RHEL/CentOS/Fedora
+sudo yum install boost-devel
+# macOS
+brew install boost
+# conda
+conda install -c conda-forge boost-cpp
+```
+If Boost is installed in a non-standard location, point CMake at it:
+```
+cmake .. -DBOOST_ROOT=/path/to/boost
+```
+
+The end-to-end pipeline in `pipeline/` additionally requires Python 3 with:
+```
+numpy, pandas, scikit-learn, statsmodels, bed_reader
 ```
 
 ## General description
@@ -19,7 +41,7 @@ Given a genotypes and phenotypes in PLINK format (bim, fam, bed, pheno), a targe
 #### Note: 
 Intuitively, the **annotation file** guides the software on how to partition the genotype matrix by SNPs. The column number of the annotation file determines the number of partitions. One basic rule of creating the annotation file: each row should contain one and only one "1"s.
 
-To run the code, please delete the existing `build` folder (if any) and then use the following commands to compile the executable code.
+To run the code, use the following commands to compile the executable code.
 ```
 mkdir build
 cd build
@@ -64,4 +86,7 @@ sh test.sh
 ## Output:
 FAME estimates K+2 variance components with K annotations corresponding to the annotation file. The first K components correspond to the additive component at each bin; component K+1 corresponds to the ME effect of the target SNP paired with the SNPs specified in gxgbin; and component K+2 corresponds to the i.i.d. noise component. 
 
-Executing on the demo examples should take less than one minute to complete. 
+Executing on the demo examples should take less than one minute to complete.
+
+## Change log
+Narrative records of non-trivial changes, including what was verified and what was deliberately left alone, are in [`log/`](log/README.md). 
