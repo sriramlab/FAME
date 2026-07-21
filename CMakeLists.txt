@@ -1,6 +1,10 @@
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.5)
 project(EM_C++)
-include_directories(include/)
+
+# Boost is used only for its header-only random number generators, so no
+# Boost libraries need to be linked.
+find_package(Boost REQUIRED)
+include_directories(include/ ${Boost_INCLUDE_DIRS})
 
 set(CMAKE_BUILD_TYPE RelWithDebInfo)
 set(CMAKE_CXX_FLAGS "-std=c++0x -O3 -lrt -lpthread ")
